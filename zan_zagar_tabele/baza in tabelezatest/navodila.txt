@@ -1,0 +1,49 @@
+
+Gre za prodajo avtomobilski delov, kar pomeni temu ustrezno lahko izberete dizajn. Vodja naj doloèi kdo bo kaj delal. Ne potrebujete izdelati 6. nalogo (vodja izbere dizajn). Kako bo zgledala baza in vse ostalo doloèite v naprej tako, da ne èakata drug drugega.
+Vodja uredi, da je vse v smisleni celoti.
+
+Vsak del posebej in vse skupaj naj bo na githubu! Z ustrezno razlago, kaj dela.
+
+1. naloga:
+Excel je doloèen z vaše strani in naj vsebuje podatke, ki bo vnesel stvari v vsaj 3 tabele.
+- importanje excela in zapis podatkov v bazo
+- izpis podatkov v aktivno tabelo: to pomeni dodajanje, brisanje ali urejanje podatkov v tabeli (živo) spremeni podatke v bazi
+- izvoz podatkov v json/xml in ponovni uvoz izvoženih podatkov
+
+2. naloga:
+Prikaz uvoženih avtomobilski delov preko excela.
+- sortiranje znotraj tabele
+- iskanje znotraj tabele
+- prikaz grafov (potakov, ki ste jih pridobili preko excela) - omejitev izpisa podatkov in doloèitev oz. možna izbira, kaj naj bo v grafu od polj 
+- izbira tipa grafa, v katerem naj se prikaže
+- izvoz grafov v sliko
+
+3. naloga
+Galerija avtomobilski delov.
+- nalaganje veè datotek naenkrat v album
+- galerija slik /thumbnail + fullscreen)
+- vsaka slika naj dobi vodni žig
+- urejanje formata slik za celoten album
+
+4. naloga
+- brez osvežitve
+- registracija
+- login
+- pop-up login/registracija
+- nalaganje avatarja za profilno sliko
+
+5. naloga
+- upload video/video player
+- upload audio/audio player
+- registracija na novice (mailchimp)
+- chat
+
+6. naloga:
+- design lasten
+- responsitve design
+- Implementacija parallaxa
+- Možnost izbire menija preko contekstnega menija
+
+Bonus (nadgradnja):
+- animirani logo* (bonus)
+- React JS smiselna implementacija

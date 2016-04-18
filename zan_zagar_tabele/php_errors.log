@@ -1,0 +1,9 @@
+[17-Apr-2016 12:24:43 UTC] PHP Warning:  include(Classes/PHPExcel/IOFactory.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/zan_zagar_tabele_lokal/uvoz_tabele/upload_insert.php on line 4
+[17-Apr-2016 12:24:43 UTC] PHP Stack trace:
+[17-Apr-2016 12:24:43 UTC] PHP   1. {main}() /home/ubuntu/workspace/zan_zagar_tabele_lokal/uvoz_tabele/upload_insert.php:0
+[17-Apr-2016 12:24:43 UTC] PHP Warning:  include(): Failed opening 'Classes/PHPExcel/IOFactory.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/zan_zagar_tabele_lokal/uvoz_tabele/upload_insert.php on line 4
+[17-Apr-2016 12:24:43 UTC] PHP Stack trace:
+[17-Apr-2016 12:24:43 UTC] PHP   1. {main}() /home/ubuntu/workspace/zan_zagar_tabele_lokal/uvoz_tabele/upload_insert.php:0
+[17-Apr-2016 12:24:43 UTC] PHP Fatal error:  Class 'PHPExcel_IOFactory' not found in /home/ubuntu/workspace/zan_zagar_tabele_lokal/uvoz_tabele/upload_insert.php on line 77
+[17-Apr-2016 12:24:43 UTC] PHP Stack trace:
+[17-Apr-2016 12:24:43 UTC] PHP   1. {main}() /home/ubuntu/workspace/zan_zagar_tabele_lokal/uvoz_tabele/upload_insert.php:0
