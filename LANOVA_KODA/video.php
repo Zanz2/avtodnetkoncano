@@ -84,13 +84,16 @@ if(!empty($_SESSION['login_user']))
         else
         {
 ?>
-
+<br>
 <div class="leanback-player-audio" width="350px">
     <!-- HTML5 <audio> element -->
     <audio preload="metadata" controls>
         <!-- HTML5 <audio> sources -->
         <source src="<?php echo $lmao; ?>" type='audio/ogg; codecs="vorbis"'/>
     </audio>
+    <br>
+    <br>
+    <br>
 </div>
 </div>
 </section>
@@ -99,6 +102,8 @@ if(!empty($_SESSION['login_user']))
 <br>
 <br>
 <br>
+<br>
+<div class="predvajalnik" style="width:850px; float:left; margin-left:100px; margin-bottom:100px;">
 <?php                                                                            
         }
     }
@@ -118,7 +123,8 @@ if(!isset($_SESSION["admin"]))
 <?php
 }
 ?>
-
+</div>
+<br>
 
 
 <script>
