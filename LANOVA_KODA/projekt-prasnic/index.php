@@ -2,8 +2,15 @@
 include_once("db.php");
 $db = new DB();
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<?php
+session_start();
+if(empty($_SESSION['login_user']))
+{
+header('Location: ../index.php');
+}
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Drag&amp;Drop Reorder</title>
@@ -57,11 +64,16 @@ $(document).ready(function(){
   <source src="logo.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
-    Uporaba programa Blender.
+    &nbsp;
+    <video width="380" height="300" autoplay controls loop>
+  <source src="video-1460975977.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+    </video>
+    
     <h1>&nbsp;&nbsp;&nbsp;Pozdravljeni na spletnem mestu AVTOD.NET</h1>
 <div style="margin-top:50px;">
     
-	<a href="javascript:void(0);" class="btn outlined mleft_no reorder_link" id="save_reorder">reorder photos</a>
+	<a href="https://koncanprojekt-zanr512.c9users.io/LANOVA_KODA/" class="btn moj" style="background-color:#CCCCCC">NAZAJ</a><a href="javascript:void(0);" class="btn outlined mleft_no reorder_link" id="save_reorder">reorder photos</a>
     <div id="reorder-helper" class="light_box" style="display:none;">1. Drag photos to reorder.<br>2. Click 'Save Reordering' when finished.</div>
     <div class="gallery">
         <ul class="reorder_ul reorder-photos-list">
@@ -75,12 +87,15 @@ $(document).ready(function(){
     </div>
 </div>
     <div style="margin-top:50px;">
-        <a href="dodaj.php" class="btn outlined">DODAJ SLIKO</a> &nbsp;&nbsp;&nbsp; <a href="test3.php" class="btn moj">SPREMENI KONČNICE NA .PNG</a>&nbsp;&nbsp;&nbsp; <a href="test4.php" class="btn moj">SPREMENI KONČNICE NA .JPG</a>&nbsp;&nbsp;&nbsp; <a href="test5.php" class="btn moj">SPREMENI KONČNICE NA .BMP</a>
+        <a href="dodaj.php" class="btn outlined">DODAJ SLIKO</a> &nbsp;&nbsp;&nbsp; <a href="test3.php" class="btn moj">SPREMENI KONČNICE NA .PNG</a>&nbsp;&nbsp;&nbsp; <a href="test4.php" class="btn moj">.JPG</a>&nbsp;&nbsp;&nbsp; <a href="test6.php" class="btn moj">.JPEG</a>&nbsp;&nbsp;&nbsp; <a href="test5.php" class="btn moj">SPREMENI KONČNICE NA .BMP</a>
     </div>
     <br>
+        <div style="margin-top:20px;">
         <a href="test2.php" class="btn moj" style="background-color:#e0ebf6">GALERIJA 1 (thumbnail)</a>
         <a href="test.php" class="btn moj" style="background-color:#e0ebf6">GALERIJA 2 (fullscreen/vodni žig)</a>
+        <a href="gallery3.php" class="btn moj" style="background-color:#e0ebf6">GALERIJA 3 (za touchscreen)</a>
         <a href="test_zig.php" class="btn moj" style="background-color:#e0ebf6">SLIKE Z MOJIM VODNIM ŽIGOM</a>
+        </div>
     </br>
 </body>
 </html>

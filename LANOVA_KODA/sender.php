@@ -8,7 +8,7 @@ $headers = 'From: webmaster@example.com' . "\r\n" .
     'X-Mailer: PHP/' . phpversion();
 
 
-$stavek = $baza->prepare("SELECT * FROM users WHERE news NOT NULL");
+$stavek = $baza->prepare("SELECT * FROM users WHERE news=1");
 $stavek->execute();
 
 $row = $stavek->fetchall();

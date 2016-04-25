@@ -2,7 +2,7 @@
 if(!empty($_FILES)){
 	
 	//database configuration
-	$dbHost = getenv('IP');
+	$dbHost = getenv('IP');;
 	$dbUsername = 'zanr512';
 	$dbPassword = '';
 	$dbName = 'projekt';

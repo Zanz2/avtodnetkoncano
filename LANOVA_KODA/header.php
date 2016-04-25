@@ -119,12 +119,7 @@
 	</head>
 	<body class="right-sidebar">
             
-                                    <div id="twilight" class="white_content">           
-          <form method="POST" action="" name="logoutForm" id="logoutForm" style="display: <?php echo $display; ?>;">
-        <input type='hidden' name='actionLogout' id='actionLogout' value='1'/>
-        Logout: <input type="submit" value="Log out" name="logout" id="logout" />
-    </form>
-           </div>   
+
             
             
             
@@ -221,13 +216,10 @@
 									<li class="current"><a href="index.php">Home</a></li>
 								
 										<li><a href= "javascript:void(0)" onclick = "document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">Register</a></li>
-											<li><a href="javascript:void(0)" onclick = "document.getElementById('dark').style.display='block';document.getElementById('fade').style.display='block'">Login</a></li>
+										<li><a href="podatki.php">Prijava</a></li>
 										
 									
-									<li><a href="http://zigaprasnic97.hol.es/projekt/projekt-prasnic/">Galerija</a></li>
-										
-									
-									<li><a href="video.php">Video Predvajalnik</a></li>
+									<li><a href="projekt-prasnic/test_zig.php">Galerija</a></li>
 								
 								</ul>
 							</nav>

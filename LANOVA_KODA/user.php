@@ -42,11 +42,9 @@ header('Location: index.php');
 
                        <?php
     include_once 'db.php';   
-
     $uporabnik = $_SESSION['login_user'];
     $fileName = mysqli_query($db, "SELECT profile_pic FROM users WHERE username = '$uporabnik'");
   //  $file_path = "profilne_slike/'$uporabnik'/'$fileName'";
-
  while ($row = $fileName->fetch_assoc()) {
      
      if ( $row['profile_pic'] == '')
@@ -65,7 +63,11 @@ header('Location: index.php');
             <h2> Posodobite sliko tukaj! </h2>
                     <form enctype="multipart/form-data" method="post" action="profilna_slika_upload.php">
    <input name="uploaded_file" accept="image/*" type="file"/> <br>
-<br> <input class="btn btn-primary btn-lg btn-block" type="submit" value="Upload It" required="required"/> 
+<br> <input class="btn btn-primary btn-lg btn-block" type="submit" value="Upload It" required="required"/>
+
+<?php
+	include 'test.php'
+?>
 </form>
 </section>
 </div>

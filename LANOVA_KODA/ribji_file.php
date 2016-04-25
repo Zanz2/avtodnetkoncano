@@ -1,6 +1,18 @@
 <?php 
     include 'header_home.php';
     include 'pdo-connect.php';
+    include 'pdo-connect2.php';
+    
+    
+    
+    $stavek = $baza1->prepare("SELECT count(*) FROM users WHERE news=1");
+    $stavek->execute();
+    
+    $naroceni = $stavek->fetch(PDO::FETCH_ASSOC);
+    
+    $stavek = $baza1->prepare("SELECT count(*) FROM users WHERE news!=1");
+    $stavek->execute();
+    $naroceniNe = $stavek->fetch(PDO::FETCH_ASSOC);    
     
 ?>
 <html>
@@ -19,23 +31,21 @@
 							<div class="8u 12u(mobile)">
 								<section id="featured">
 									<div id="content">
-							<?php if ($_SESSION['admin'] == null)
-        					{
-        						 header('Location: index.php');
-        					}
+							<?php
     
     						$stavek = $baza->prepare("SELECT * FROM ostalo ORDER BY id DESC");
 							 $stavek->execute();
     
     						$row = $stavek->fetchall(); ?>
+    						<button id="gumb">Prikaži tortni diagram</button>
+    						<button id="gumb1">Prikaži stolpični graf</button>
     						
-    						
-
-    						
+									<div id="graf" style="display: none"></div>
+    								<div id="graf2" style="display: none; min-width: 720px; height: 400px; margin: 0 auto" ></div>
     						
     						
 									
-
+	
 								</div>
 							</section>
 						</div>
@@ -105,28 +115,16 @@
 					                }
 					            },
 					            series: [{
-					                name: 'Brands',
+					                name: 'Novice',
 					                colorByPoint: true,
 					                data: [{
-					                    name: 'Microsoft Internet Explorer',
-					                    y: 56.33
+					                    name: 'So naročeni',
+					                    y: <?php echo $naroceni['count(*)']; ?>,
 					                }, {
-					                    name: 'Chrome',
-					                    y: 24.03,
+					                    name: 'Niso naročeni',
+					                    y:  <?php echo $naroceniNe['count(*)']; ?>,
 					                    sliced: true,
 					                    selected: true
-					                }, {
-					                    name: '<?php echo $trol; ?>',
-					                    y: 10.38
-					                }, {
-					                    name: 'Safari',
-					                    y: 4.77
-					                }, {
-					                    name: 'Opera',
-					                    y: 0.91
-					                }, {
-					                    name: 'Proprietary or Undetectable',
-					                    y: 0.2
 					                }]
 					            }]
 					        });
@@ -134,9 +132,81 @@
 					});
 			</script>
 			
+			<script>
+				$(function () {
+    $('#graf2').highcharts({
+        chart: {
+            type: 'bar'
+        },
+        title: {
+            text: 'Števeilo'
+        },
+        xAxis: {
+            categories: ['Uporabniki'],
+            title: {
+                text: null
+            }
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Število uporabnikov',
+                align: 'high'
+            },
+            labels: {
+                overflow: 'justify'
+            }
+        },
+        tooltip: {
+            valueSuffix: ''
+        },
+        plotOptions: {
+            bar: {
+                dataLabels: {
+                    enabled: true
+                }
+            }
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'top',
+            x: -40,
+            y: 80,
+            floating: true,
+            borderWidth: 1,
+            backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+            shadow: true
+        },
+        credits: {
+            enabled: false
+        },
+        series: [{
+            name: 'So naročeni',
+            data: [<?php echo $naroceni['count(*)']; ?>]
+        }, {
+            name: 'Niso naročeni',
+            data: [<?php echo $naroceniNe['count(*)']; ?>]
+        }]
+    });
+});
+			</script>
             
-            
-            
+           <script>
+				$(document).ready(function(){
+				    $("#gumb").click(function(){
+				        $("#graf").toggle();
+				        $("#graf2").hide();
+				    });
+				});
+				
+				$(document).ready(function(){
+				    $("#gumb1").click(function(){
+				        $("#graf2").toggle();
+				        $("#graf").hide();
+				    });
+				});
+           </script> 
             
             
 	</body>

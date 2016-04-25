@@ -183,9 +183,10 @@
 						<!-- Nav -->
 							<nav id="nav">
 								<ul>
-									<li class="current"><a href="index.php">Home</a></li>
-                                     <li><a href="http://zigaprasnic97.hol.es/projekt/projekt-prasnic/">Galerija</a></li>
-									
+                                     <li><a href="projekt-prasnic/test2.php">Galerija1</a></li>
+                                     <li><a href="projekt-prasnic/test.php">Galerija2</a></li>
+                                     <li><a href="projekt-prasnic/gallery3.php">Galerija3</a></li>
+								    <li><a href="projekt-prasnic/">ADMIN DOSTOP</a></li>
 									</li>
 
 									<li><a href="video.php">Video Predvajalnik</a></li>
@@ -195,13 +196,13 @@
                                     include 'db.php';
                                     
                                      $uporabniskoime = $_SESSION['login_user'];
-                                      $sql = mysqli_query($db,"SELECT username FROM users WHERE username='$uporabniskoime'");
+                                      $sql = mysqli_query($db,"SELECT admin FROM users WHERE username='$uporabniskoime'");
                                       $row=mysqli_fetch_array($sql,MYSQLI_NUM);
-                                      if($row[0]=="admin")
+                                      if($row[0]=="1")
                                       {
-                                      
+                                        $_SESSION['admin'] = 1;
                                      ?>
-								<?php //	<li><a href="ribji_file.php">Admin</a></li> ?>
+								    <li><a href="ribji_file.php">Admin</a></li>
 									<li><a href="aktivna_tabela.php">Aktivna tabela</a></li>
 									<?php   }          ?>
 									<li><a href="upload_tabela.php">Upload tabele</a></li>

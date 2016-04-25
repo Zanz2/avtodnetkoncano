@@ -17,8 +17,8 @@ else
         echo "ERROR: Please browse for a file before clicking the upload button.";
         exit();
     }
-    if(($fileType == "video/mp4" || $fileType == "audio/mp3"))
-    {
+   
+    
     
         if(move_uploaded_file($fileTmpLoc, "upload/$fileName")){
             echo "Nalaganje datoteke <b>$fileName</b> je končano";
@@ -32,10 +32,7 @@ else
         } else {
             echo "Upload failed";
         } 
-    }
-    else
-    {
-        echo "Dovoljene so samo datoteke formata .mp3 in .mp4";
-    }
+    
+
 
 }

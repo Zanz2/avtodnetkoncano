@@ -1,8 +1,7 @@
 <?php
 session_start();
-if(empty($_SESSION['login_user']))
+if(!empty($_SESSION['login_user']))
 {
-header('Location: index.php');
 }
 
         include 'header_home.php';
@@ -38,8 +37,6 @@ header('Location: index.php');
 			<!-- Header -->
 			
 			<?php
-                               
-				include 'header_home.php';
                                 include 'pdo-connect.php';
 				
 			?>

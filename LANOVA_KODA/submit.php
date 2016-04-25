@@ -1,5 +1,5 @@
 <?php
-include_once('db.php');
+include('db.php');
 // Fetching Values From the post method
 $username = $_POST['username'];
 $email = $_POST['email'];

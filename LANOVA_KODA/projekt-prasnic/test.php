@@ -2,6 +2,13 @@
 include_once("db.php");
 $db = new DB();
 ?>
+<?php
+session_start();
+if(empty($_SESSION['login_user']))
+{
+header('Location: ../index.php');
+}
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="https://www.w3.org/1999/xhtml">
 <head>
